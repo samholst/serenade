@@ -51,6 +51,10 @@ serenade.global().command("chrome", (api) => {
   api.focusOrLaunchApplication("chrome");
 });
 
+serenade.global().command("slack", (api) => {
+  api.focusOrLaunchApplication("slack");
+});
+
 serenade.global().command("visual", (api) => {
   api.focusOrLaunchApplication("visual");
 });
