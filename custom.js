@@ -1,26 +1,19 @@
 /* Serenade Custom Commands
-
 In this file, you can define your own custom commands with the Serenade API.
-
 For instance, here's a custom automation that opens your terminal and runs a command:
-
 serenade.global().command("make", api => {
   api.focusApplication("terminal");
   api.typeText("make clean && make");
   api.pressKey("return");
 });
-
 And, here's a Python snippet for creating a test method:
-
 serenade.language("python").snippet(
   "test method <%identifier%>",
   "def test_<%identifier%>(self):<%newline%><%indent%>pass",
   { "identifier": ["underscores"] }
   "method"
 );
-
 For more information, check out the Serenade API documentation: https://serenade.ai/docs/api
-
 */
 
 serenade.global().command("restart rails", (api) => {
@@ -51,16 +44,16 @@ serenade.global().command("chrome", (api) => {
   api.focusOrLaunchApplication("chrome");
 });
 
-serenade.global().command("slack", (api) => {
-  api.focusOrLaunchApplication("slack");
-});
-
 serenade.global().command("visual", (api) => {
   api.focusOrLaunchApplication("visual");
 });
 
 serenade.global().command("terminal", (api) => {
   api.focusOrLaunchApplication("i term");
+});
+
+serenade.global().command("slack", (api) => {
+  api.focusOrLaunchApplication("slack");
 });
 
 serenade.global().command("discord", (api) => {
@@ -117,7 +110,7 @@ serenade.global().command("previous", (api) => {
 
 serenade.global().command("recurse <%text%>", async (api, matches) => {
   await api.pressKey("r", ["control"]);
-	await api.typeText(matches.text);
+  await api.typeText(matches.text);
 });
 
 // to do
